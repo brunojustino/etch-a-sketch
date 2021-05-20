@@ -1,4 +1,4 @@
-let containerDiv = document.querySelector(".container");
+let containerDiv = document.querySelector(".grid-container");
 let root = document.querySelector(':root');
 
 // document.documentElement.style.setProprety("--rowNum", 6) change css variable
@@ -11,7 +11,7 @@ function createDiv(){
 }
 
 function changeColor(e){
-    console.log(e.target);
+    //console.log(e.target);
     e.target.style.background = generateRGBColor();
 }
 
