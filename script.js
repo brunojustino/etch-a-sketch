@@ -1,12 +1,12 @@
 let containerDiv = document.querySelector(".grid-container");
-let root = document.querySelector(':root');
+let root = document.documentElement;
 let resetBtn =  document.querySelector('#resetBtn');
 let gridBtn =  document.querySelector('#gridBtn');
 let gridNumberInput = document.getElementById("gridNumberInput");
 let gridNumber;
 let pInputReturn =  document.getElementById("inputValReturn");
 
-// document.documentElement.style.setProprety("--rowNum", 6) change css variable
+// root.setProprety("--rowNum", 6) change css variable
 
 function createDiv(){
     let createdDiv = document.createElement("div");
@@ -38,7 +38,9 @@ function changeGrid(e){
         removeGrid();
         pInputReturn.classList.add("hidden");
         pInputReturn.textContent = "";
-        createGrid(gridNumberInput.value);
+        root.style.setProperty("--rowNum", gridNumberInput.value);
+        root.style.setProperty("--colNum", gridNumberInput.value);
+        createGrid(gridNumberInput.value*gridNumberInput.value);
     }
     
 }
