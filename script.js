@@ -31,7 +31,7 @@ function generateRGBColor(){
 gridBtn.addEventListener("click", changeGrid);
 
 function changeGrid(e){   
-    if(gridNumberInput.value > 99 || gridNumberInput < 1){
+    if(gridNumberInput.value > 99 || gridNumberInput.value < 1){
         pInputReturn.classList.remove("hidden");
         pInputReturn.textContent = "Choose a number between 1 and 99";
     } else {
