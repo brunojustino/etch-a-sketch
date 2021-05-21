@@ -15,6 +15,14 @@ body{
     height: 100vh;
 }
 
+a{
+    color: rgb(34, 36, 36);
+}
+
+a:hover{
+    color: rgba(34, 36, 36, 0.548);
+}
+
 header{
     display: flex;
     justify-items: center;
@@ -75,7 +83,7 @@ footer{
 .reset{
     display: flex;
     position: relative;
-    bottom: 0px;
+
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -97,7 +105,6 @@ footer{
     justify-self: center;
     padding-bottom: 1%;
     margin-bottom: 1%;
-    bottom: 0px;
     flex: 1;
 }
 
