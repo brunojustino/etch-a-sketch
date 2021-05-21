@@ -1,5 +1,10 @@
 let containerDiv = document.querySelector(".grid-container");
 let root = document.querySelector(':root');
+let resetBtn =  document.querySelector('#resetBtn');
+let gridBtn =  document.querySelector('#gridBtn');
+let gridNumberInput = document.getElementById("gridNumberInput");
+let gridNumber;
+let pInputReturn =  document.getElementById("inputValReturn");
 
 // document.documentElement.style.setProprety("--rowNum", 6) change css variable
 
@@ -11,7 +16,6 @@ function createDiv(){
 }
 
 function changeColor(e){
-    //console.log(e.target);
     e.target.style.background = generateRGBColor();
 }
 
@@ -24,7 +28,39 @@ function generateRGBColor(){
     return rgbColor
 }
 
-for(i=0; i< 16; i++){
+gridBtn.addEventListener("click", changeGrid);
+
+function changeGrid(e){   
+    if(gridNumberInput.value > 99 || gridNumberInput < 1){
+        pInputReturn.classList.remove("hidden");
+        pInputReturn.textContent = "Choose a number between 1 and 99";
+    } else {
+        removeGrid();
+        pInputReturn.classList.add("hidden");
+        pInputReturn.textContent = "";
+        createGrid(gridNumberInput.value);
+    }
+    
+}
+
+function resetGrid(){
+    removeGrid();
+    createGrid(16);
+}
+
+function removeGrid(){
+    divs = document.querySelectorAll(".createdDiv")
+    divs.forEach(e => e.remove());
+}
+
+function createGrid(gridNumber) {
+    for(i=0; i < gridNumber; i++){
+        createDiv();
+    }
+}
+
+for(i=0; i < 16; i++){
     createDiv();
 }
+
 

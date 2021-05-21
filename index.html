@@ -8,17 +8,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
     <header>
-        <p>Type the number of grids:</p>
-        <input type="text">
-        <button type="submit">ok</button>
+        <p>Number of grids:</p>
+        <input id="gridNumberInput" maxlength="2" size="2" min="1" max="99" value="16" type="number">
+        <button id="gridBtn" class="btn" type="submit">ok</button>
+        <p id="inputValReturn" class="hidden"></p>
     </header>
     <div class="grid-container">
     </div>
+    <footer>
     <div class="reset">
-        <button type="submit">Reset Colors</button>
+        <button id="resetBtn" class="btn" onclick="resetGrid()" type="submit">Reset Colors</button>
         <p><small>This part of The Odin Project Course</small></p>
     </div>
+    </footer>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
