@@ -58,6 +58,12 @@ input[type=number]{
     border-radius: 5px;
 }
 
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .grid-container{
     display: grid;
     grid-template-columns: repeat(var(--colNum), 1fr);
@@ -65,6 +71,7 @@ input[type=number]{
     justify-items: stretch;
     align-items: stretch;
     height: 80vh;
+    max-height: 100vh;
 }
 
 .createdDiv{
@@ -77,7 +84,9 @@ input[type=number]{
 
 footer{
     align-self: center;
+    justify-self: center;
     display: grid;
+    clear: both;
 }
 
 .reset{

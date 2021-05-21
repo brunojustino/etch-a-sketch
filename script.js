@@ -47,7 +47,7 @@ function changeGrid(e){
 
 function resetGrid(){
     removeGrid();
-    createGrid(gridNumberInput.value);
+    createGrid(gridNumberInput.value*gridNumberInput.value);
 }
 
 function removeGrid(){
