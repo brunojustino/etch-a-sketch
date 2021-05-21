@@ -38,15 +38,20 @@ function changeGrid(e){
         removeGrid();
         pInputReturn.classList.add("hidden");
         pInputReturn.textContent = "";
-        root.style.setProperty("--rowNum", gridNumberInput.value);
-        root.style.setProperty("--colNum", gridNumberInput.value);
+        setRowCol();
         createGrid(gridNumberInput.value*gridNumberInput.value);
     }
     
 }
 
+function setRowCol(){
+    root.style.setProperty("--rowNum", gridNumberInput.value);
+    root.style.setProperty("--colNum", gridNumberInput.value);
+}
+
 function resetGrid(){
     removeGrid();
+    setRowCol();
     createGrid(gridNumberInput.value*gridNumberInput.value);
 }
 
@@ -61,8 +66,6 @@ function createGrid(gridNumber) {
     }
 }
 
-for(i=0; i < 16; i++){
-    createDiv();
-}
-
+createGrid(16);
+gridNumberInput.value = 4;
 
